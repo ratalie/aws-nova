@@ -1,0 +1,121 @@
+{
+  "metadata": {
+    "language": "Awajún",
+    "purpose": "Common phrases for educational contexts",
+    "notes": "Phrases compiled for teacher-student classroom interaction. Community validation recommended."
+  },
+  "classroom_phrases": [
+    {
+      "spanish": "Buenos días, estudiantes",
+      "awajun": "Pujut tsawantai, unuimatainau",
+      "context": "Saludo matutino en el aula",
+      "pronunciation_guide": "pu-JUT tsa-wan-TAI u-nui-ma-tai-NAU"
+    },
+    {
+      "spanish": "Vamos a aprender juntos",
+      "awajun": "Ii unuimataji",
+      "context": "Invitación a aprender",
+      "pronunciation_guide": "II u-nui-ma-TA-ji"
+    },
+    {
+      "spanish": "¿Entienden?",
+      "awajun": "¿Nekapeame?",
+      "context": "Verificar comprensión",
+      "pronunciation_guide": "ne-ka-pe-A-me"
+    },
+    {
+      "spanish": "Muy bien",
+      "awajun": "Pegkeg",
+      "context": "Expresión de aprobación",
+      "pronunciation_guide": "PEG-keg"
+    },
+    {
+      "spanish": "Escuchen con atención",
+      "awajun": "Antukta pegkeg",
+      "context": "Pedir atención",
+      "pronunciation_guide": "an-TUK-ta PEG-keg"
+    },
+    {
+      "spanish": "Repitan después de mí",
+      "awajun": "Wika takui atum aujsatarum",
+      "context": "Ejercicio de repetición",
+      "pronunciation_guide": "WI-ka ta-KUI a-TUM auj-sa-ta-RUM"
+    },
+    {
+      "spanish": "¿Cómo se dice en Awajún?",
+      "awajun": "¿Wajuk Awajún chichaman tawai?",
+      "context": "Preguntar por traducción",
+      "pronunciation_guide": "wa-JUK a-wa-JUN chi-cha-MAN ta-WAI"
+    },
+    {
+      "spanish": "Abran sus cuadernos",
+      "awajun": "Atumí papig ipagtuktarum",
+      "context": "Instrucción de clase",
+      "pronunciation_guide": "a-tu-MI pa-PIG i-pag-tuk-ta-RUM"
+    },
+    {
+      "spanish": "Vamos a leer",
+      "awajun": "Aujsaji",
+      "context": "Actividad de lectura",
+      "pronunciation_guide": "auj-SA-ji"
+    },
+    {
+      "spanish": "¿Quién quiere participar?",
+      "awajun": "¿Juwi takakmatas wakeaga?",
+      "context": "Invitar participación",
+      "pronunciation_guide": "ju-WI ta-kak-ma-TAS wa-ke-A-ga"
+    }
+  ],
+  "daily_interaction": [
+    {
+      "spanish": "¿Cómo estás?",
+      "awajun": "¿Wajuk pujame?",
+      "context": "Saludo cotidiano",
+      "pronunciation_guide": "wa-JUK pu-JA-me"
+    },
+    {
+      "spanish": "Estoy bien",
+      "awajun": "Pegkeg pujajai",
+      "context": "Respuesta positiva",
+      "pronunciation_guide": "PEG-keg pu-JA-jai"
+    },
+    {
+      "spanish": "Tengo hambre",
+      "awajun": "Wika tsukagmajai",
+      "context": "Expresar necesidad",
+      "pronunciation_guide": "WI-ka tsu-kag-MA-jai"
+    },
+    {
+      "spanish": "Vamos a casa",
+      "awajun": "Jeana weaji",
+      "context": "Final del día escolar",
+      "pronunciation_guide": "je-A-na we-A-ji"
+    },
+    {
+      "spanish": "Nos vemos mañana",
+      "awajun": "Kashik iijmaji",
+      "context": "Despedida",
+      "pronunciation_guide": "ka-SHIK iij-MA-ji"
+    }
+  ],
+  "cultural_expressions": [
+    {
+      "spanish": "La tierra es nuestra madre",
+      "awajun": "Nugka iina dukugi ainawai",
+      "context": "Expresión de conexión con la tierra, referencia a Nugkui",
+      "cultural_note": "Nugkui es el espíritu femenino de la tierra en la cosmovisión Awajún, protectora de la agricultura y la fertilidad"
+    },
+    {
+      "spanish": "El bosque nos da vida",
+      "awajun": "Ikam pujutmain suramji",
+      "context": "Valoración del bosque amazónico",
+      "cultural_note": "El bosque (ikam) es considerado espacio sagrado y fuente de vida material y espiritual"
+    },
+    {
+      "spanish": "Escuchen a los ancianos",
+      "awajun": "Muun chichame antuktarum",
+      "context": "Respeto por los mayores",
+      "cultural_note": "Los ancianos (muun) son portadores de conocimiento ancestral y su palabra es muy respetada"
+    }
+  ]
+}

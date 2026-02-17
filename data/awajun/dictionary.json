@@ -1,0 +1,111 @@
+{
+  "metadata": {
+    "language": "Awajún",
+    "iso_code": "agr",
+    "family": "Jíbaro",
+    "source": "Compiled from public linguistic resources and the official normalized alphabet (RM N° 2554-2009-ED)",
+    "alphabet": "a, b, ch, d, e, g, h, i, j, k, m, n, p, r, s, sh, t, ts, u, w, y",
+    "notes": "This is a starter dictionary for educational purposes. Community validation is essential for production use."
+  },
+  "categories": {
+    "saludos": {
+      "name_es": "Saludos y expresiones básicas",
+      "entries": [
+        {"awajun": "pujut", "spanish": "vida / vivir", "context": "Concepto central en la cosmovisión Awajún"},
+        {"awajun": "wika", "spanish": "yo", "context": "Pronombre personal primera persona"},
+        {"awajun": "ame", "spanish": "tú", "context": "Pronombre personal segunda persona"},
+        {"awajun": "nii", "spanish": "él/ella", "context": "Pronombre personal tercera persona"},
+        {"awajun": "ii", "spanish": "nosotros", "context": "Pronombre personal primera persona plural"},
+        {"awajun": "atumi", "spanish": "ustedes", "context": "Pronombre personal segunda persona plural"},
+        {"awajun": "pujustá", "spanish": "quédate bien / adiós", "context": "Despedida respetuosa"},
+        {"awajun": "dutikash", "spanish": "gracias", "context": "Expresión de agradecimiento"},
+        {"awajun": "jaa", "spanish": "sí", "context": "Afirmación"},
+        {"awajun": "atsa", "spanish": "no", "context": "Negación"}
+      ]
+    },
+    "familia": {
+      "name_es": "Familia y relaciones",
+      "entries": [
+        {"awajun": "apag", "spanish": "padre", "context": "Término de parentesco paterno"},
+        {"awajun": "dukug", "spanish": "madre", "context": "Término de parentesco materno"},
+        {"awajun": "uchi", "spanish": "niño/hijo", "context": "Se usa para niños pequeños"},
+        {"awajun": "nuwa", "spanish": "mujer/esposa", "context": "Término general para mujer"},
+        {"awajun": "aishmag", "spanish": "hombre/esposo", "context": "Término general para hombre"},
+        {"awajun": "sai", "spanish": "hermano (de hombre)", "context": "Relación entre hermanos varones"},
+        {"awajun": "umag", "spanish": "hermana (de mujer)", "context": "Relación entre hermanas"},
+        {"awajun": "tikich", "spanish": "otro/otra persona", "context": "Referencia a terceros"},
+        {"awajun": "patajam", "spanish": "comunidad/familia extendida", "context": "Concepto de comunidad"}
+      ]
+    },
+    "naturaleza": {
+      "name_es": "Naturaleza y medio ambiente",
+      "entries": [
+        {"awajun": "numi", "spanish": "árbol/madera", "context": "Elemento central del bosque amazónico"},
+        {"awajun": "yumi", "spanish": "agua/río", "context": "Los ríos son vías de comunicación principales"},
+        {"awajun": "nugka", "spanish": "tierra/suelo", "context": "Relacionado con Nugkui, espíritu de la tierra"},
+        {"awajun": "etsa", "spanish": "sol", "context": "Deidad solar en la cosmovisión Awajún"},
+        {"awajun": "nantu", "spanish": "luna", "context": "Importante en el calendario agrícola"},
+        {"awajun": "yutui", "spanish": "pájaro", "context": "Aves del bosque amazónico"},
+        {"awajun": "kuntin", "spanish": "animal de caza", "context": "Animales del bosque para subsistencia"},
+        {"awajun": "nupa", "spanish": "hierba/planta", "context": "Plantas en general"},
+        {"awajun": "tsugki", "spanish": "espíritu del agua", "context": "Entidad espiritual importante, fuente de poder chamánico"},
+        {"awajun": "ikam", "spanish": "bosque/selva", "context": "El bosque como espacio vital y sagrado"}
+      ]
+    },
+    "educacion": {
+      "name_es": "Educación y escuela",
+      "entries": [
+        {"awajun": "unuimata", "spanish": "aprender/estudiar", "context": "Concepto de aprendizaje"},
+        {"awajun": "unuimat", "spanish": "profesor/maestro", "context": "Persona que enseña"},
+        {"awajun": "unuimataig", "spanish": "escuela", "context": "Lugar de aprendizaje"},
+        {"awajun": "agag", "spanish": "escribir", "context": "Escritura"},
+        {"awajun": "aujmatsamu", "spanish": "historia/cuento", "context": "Narrativa oral, fundamental en la cultura"},
+        {"awajun": "chicham", "spanish": "palabra/idioma/mensaje", "context": "Concepto amplio que abarca lenguaje y comunicación"},
+        {"awajun": "dekas", "spanish": "verdad/verdadero", "context": "Valor importante en la cultura"},
+        {"awajun": "iina chicham", "spanish": "nuestro idioma", "context": "Referencia al idioma propio Awajún"}
+      ]
+    },
+    "numeros": {
+      "name_es": "Números",
+      "entries": [
+        {"awajun": "makichik", "spanish": "uno (1)", "context": ""},
+        {"awajun": "jimag", "spanish": "dos (2)", "context": ""},
+        {"awajun": "kampatum", "spanish": "tres (3)", "context": ""},
+        {"awajun": "ipak", "spanish": "cuatro (4)", "context": ""},
+        {"awajun": "uwej", "spanish": "cinco (5)", "context": "Literalmente 'una mano'"},
+        {"awajun": "uwej makichik", "spanish": "seis (6)", "context": "Cinco y uno"},
+        {"awajun": "uwej jimag", "spanish": "siete (7)", "context": "Cinco y dos"},
+        {"awajun": "uwej kampatum", "spanish": "ocho (8)", "context": "Cinco y tres"},
+        {"awajun": "uwej ipak", "spanish": "nueve (9)", "context": "Cinco y cuatro"},
+        {"awajun": "jimag uwej", "spanish": "diez (10)", "context": "Dos manos"}
+      ]
+    },
+    "alimentacion": {
+      "name_es": "Alimentación",
+      "entries": [
+        {"awajun": "mama", "spanish": "yuca", "context": "Alimento básico, cultivado por mujeres, asociado a Nugkui"},
+        {"awajun": "yurumak", "spanish": "comida/alimento", "context": "Término general para comida"},
+        {"awajun": "nijamanch", "spanish": "masato (bebida de yuca)", "context": "Bebida tradicional fermentada, importante en eventos sociales"},
+        {"awajun": "namak", "spanish": "pescado", "context": "Fuente importante de proteína"},
+        {"awajun": "shaa", "spanish": "maíz", "context": "Cultivo complementario"},
+        {"awajun": "inchi", "spanish": "camote", "context": "Tubérculo cultivado en las chacras"},
+        {"awajun": "wampa", "spanish": "guaba (fruta)", "context": "Fruta del bosque"}
+      ]
+    },
+    "verbos_basicos": {
+      "name_es": "Verbos básicos",
+      "entries": [
+        {"awajun": "weamu", "spanish": "ir/caminar", "context": ""},
+        {"awajun": "jamu", "spanish": "venir", "context": ""},
+        {"awajun": "yuamu", "spanish": "comer", "context": ""},
+        {"awajun": "umamu", "spanish": "beber", "context": ""},
+        {"awajun": "kanamu", "spanish": "dormir", "context": ""},
+        {"awajun": "dekamu", "spanish": "saber/conocer", "context": ""},
+        {"awajun": "tamu", "spanish": "decir/hablar", "context": ""},
+        {"awajun": "antamu", "spanish": "escuchar/oír", "context": ""},
+        {"awajun": "egamu", "spanish": "ver/mirar", "context": ""},
+        {"awajun": "takamu", "spanish": "trabajar", "context": ""}
+      ]
+    }
+  }
+}

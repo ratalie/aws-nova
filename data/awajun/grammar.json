@@ -1,0 +1,81 @@
+{
+  "metadata": {
+    "language": "Awajún",
+    "iso_code": "agr",
+    "notes": "Basic grammar rules compiled from public linguistic resources. Community validation is essential."
+  },
+  "phonology": {
+    "description": "El Awajún tiene un sistema fonológico con 4 vocales (a, e, i, u) y consonantes que incluyen africadas (ch, ts) y fricativas (sh).",
+    "vowels": ["a", "e", "i", "u"],
+    "special_consonants": {
+      "ch": "africada palatal, similar al español",
+      "sh": "fricativa palatal, como 'sh' en inglés",
+      "ts": "africada alveolar, sonido único del Awajún"
+    },
+    "nasalization": "Las vocales pueden nasalizarse en ciertos contextos"
+  },
+  "word_order": {
+    "basic": "SOV (Sujeto-Objeto-Verbo)",
+    "description": "A diferencia del español (SVO), el Awajún coloca el verbo al final de la oración.",
+    "examples": [
+      {
+        "awajun": "Wika mama yuajai",
+        "spanish": "Yo yuca como",
+        "spanish_natural": "Yo como yuca",
+        "explanation": "Sujeto (wika) + Objeto (mama) + Verbo (yuajai)"
+      },
+      {
+        "awajun": "Uchi unuimataig weawai",
+        "spanish": "Niño escuela va",
+        "spanish_natural": "El niño va a la escuela",
+        "explanation": "Sujeto (uchi) + Destino (unuimataig) + Verbo (weawai)"
+      }
+    ]
+  },
+  "verb_conjugation": {
+    "description": "Los verbos en Awajún se conjugan con sufijos que indican persona, número y tiempo.",
+    "present_tense_suffixes": {
+      "-jai": "primera persona singular (yo)",
+      "-me": "segunda persona singular (tú)",
+      "-wai/-i": "tercera persona singular (él/ella)",
+      "-ji": "primera persona plural (nosotros)"
+    },
+    "examples": [
+      {
+        "root": "wea- (ir)",
+        "forms": {
+          "wika weajai": "yo voy",
+          "ame weame": "tú vas",
+          "nii weawai": "él/ella va",
+          "ii weaji": "nosotros vamos"
+        }
+      }
+    ]
+  },
+  "suffixes": {
+    "description": "El Awajún es una lengua aglutinante: agrega sufijos para expresar significados.",
+    "common_suffixes": [
+      {"suffix": "-nau", "meaning": "plural / grupo de", "example": "uchinau = niños"},
+      {"suffix": "-num", "meaning": "en / dentro de (locativo)", "example": "yuminum = en el agua"},
+      {"suffix": "-na", "meaning": "a / hacia (direccional)", "example": "unuimataina = hacia la escuela"},
+      {"suffix": "-tai", "meaning": "para / propósito", "example": "yuamatai = para comer"}
+    ]
+  },
+  "negation": {
+    "description": "La negación se forma con 'atsa' (no) o con el sufijo verbal '-tsui'.",
+    "examples": [
+      {"awajun": "Atsa, wika weatsjai", "spanish": "No, yo no voy"},
+      {"awajun": "Nii dekatsui", "spanish": "Él/ella no sabe"}
+    ]
+  },
+  "questions": {
+    "description": "Las preguntas se forman con partículas interrogativas.",
+    "question_words": [
+      {"awajun": "¿Wajuk?", "spanish": "¿Cómo?"},
+      {"awajun": "¿Tuwi?", "spanish": "¿Dónde?"},
+      {"awajun": "¿Urukamtai?", "spanish": "¿Por qué?"},
+      {"awajun": "¿Yamai?", "spanish": "¿Cuándo?"},
+      {"awajun": "¿Juwi?", "spanish": "¿Quién?"}
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "description": "Official MINEDU educational resources for Awajún EIB (Educación Intercultural Bilingüe)",
+    "source": "Repositorio Institucional del Ministerio de Educación del Perú"
+  },
+  "pedagogical_vocabulary": {
+    "title": "Awajún Chicham Jintiatin Etejamu - Vocabulario Pedagógico Awajún",
+    "description": "Terminología técnico-pedagógica en Awajún para profesores EIB. Incluye convenciones de escritura y uso del alfabeto oficial.",
+    "url": "https://repositorio.minedu.gob.pe/handle/20.500.12799/7195",
+    "url_v2": "https://repositorio.minedu.gob.pe/handle/20.500.12799/8172",
+    "year": 2021,
+    "publisher": "Ministerio de Educación del Perú"
+  },
+  "workbooks": [
+    {
+      "title": "Wasugkamku Unuimajagmi 5 - Cuaderno de Trabajo 5 Años Awajún",
+      "url": "https://repositorio.minedu.gob.pe/handle/20.500.12799/11896",
+      "level": "Educación Inicial - 5 años"
+    },
+    {
+      "title": "Wasugkamku Unuimajagmi 4 - Cuaderno de Trabajo 4 Años Awajún",
+      "url": "https://repositorio.minedu.gob.pe/handle/20.500.12799/11885",
+      "level": "Educación Inicial - 4 años"
+    }
+  ],
+  "communication_texts": [
+    {
+      "title": "Serie Tsayag - Textos de Comunicación para Primaria",
+      "description": "Textos de Comunicación en Awajún para 1° a 5° grado de primaria EIB",
+      "levels": ["1° Primaria", "2° Primaria", "3° Primaria", "4° Primaria", "5° Primaria"]
+    },
+    {
+      "title": "Serie Augdaiyaku - Comunicación Ciclo Intermedio",
+      "description": "Material de comunicación para ciclo intermedio con portafolios de evidencias",
+      "urls": [
+        "https://repositorio.minedu.gob.pe/handle/20.500.12799/8261",
+        "https://repositorio.minedu.gob.pe/handle/20.500.12799/8263",
+        "https://repositorio.minedu.gob.pe/handle/20.500.12799/8265"
+      ]
+    }
+  ],
+  "teacher_guides": [
+    {
+      "title": "Guía para el docente 'Mina wakesa augtaig 2019' - Awajún",
+      "url": "https://repositorio.minedu.gob.pe/handle/20.500.12799/6718",
+      "description": "Guía docente para evaluaciones de lectura en Awajún"
+    }
+  ],
+  "reading_materials": [
+    {
+      "title": "Kuwam etemagmau - Historias y Relatos",
+      "description": "Historias y relatos para nivel inicial en Awajún",
+      "level": "Educación Inicial"
+    }
+  ],
+  "community_data": {
+    "source": "Base de Datos de Pueblos Indígenas u Originarios - Ministerio de Cultura del Perú",
+    "url": "https://bdpi.cultura.gob.pe/pueblos/awajun",
+    "regions": ["Amazonas", "San Martín", "Cajamarca", "Loreto", "Ucayali"],
+    "alphabet_regulation": "RM N° 2554-2009-ED (Normalización del alfabeto Awajún)"
+  }
+}
