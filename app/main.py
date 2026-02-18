@@ -7,9 +7,12 @@ Spanish-Indigenous language barrier.
 Run with: streamlit run app/main.py
 """
 
+import io
 import streamlit as st
+from audio_recorder_streamlit import audio_recorder
 from app.translator import Translator
 from app.knowledge_base import KnowledgeBase
+from app.nova_sonic import NovaSonicClient
 from app.config import SUPPORTED_LANGUAGES
 
 # --- Page Configuration ---
@@ -105,6 +108,36 @@ with tab_translate:
             horizontal=True,
         )
 
+    # --- Voice Input ---
+    st.markdown("**🎤 Entrada por voz** — Habla y Chicham transcribirá automáticamente")
+    voice_col1, voice_col2 = st.columns([1, 3])
+    with voice_col1:
+        audio_bytes = audio_recorder(
+            text="",
+            recording_color="#e74c3c",
+            neutral_color="#2ecc71",
+            icon_size="2x",
+            pause_threshold=2.0,
+            sample_rate=16000,
+        )
+    with voice_col2:
+        if audio_bytes:
+            st.audio(audio_bytes, format="audio/wav")
+
+    # Transcribe voice if recorded
+    voice_text = ""
+    if audio_bytes:
+        with st.spinner("🎤 Transcribiendo con Amazon Nova 2 Sonic..."):
+            try:
+                sonic = NovaSonicClient()
+                voice_text = sonic.transcribe_audio(audio_bytes)
+                st.success(f"**Transcripción:** {voice_text}")
+            except Exception as e:
+                st.warning(f"Error en transcripción de voz: {e}. Usa el campo de texto.")
+
+    st.divider()
+
+    # --- Text Input ---
     col_input, col_output = st.columns(2)
 
     with col_input:
@@ -113,7 +146,10 @@ with tab_translate:
             if direction == "to_indigenous"
             else f"Texto en {lang_config['name']}"
         )
-        input_text = st.text_area(source_label, height=150, key="translate_input")
+        default_text = voice_text if voice_text else ""
+        input_text = st.text_area(
+            source_label, value=default_text, height=150, key="translate_input"
+        )
 
     translate_btn = st.button(
         "🔄 Traducir", type="primary", use_container_width=True
