@@ -379,7 +379,7 @@ with tab_translate:
 
     voice_text = ""
     if audio_bytes:
-        with st.spinner("🎤 Transcribiendo con Amazon Nova 2 Sonic..."):
+        with st.spinner("🎤 Transcribiendo con Amazon Transcribe..."):
             try:
                 sonic = NovaSonicClient()
                 voice_text = sonic.transcribe_audio(audio_bytes)
