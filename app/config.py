@@ -6,8 +6,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 AWS_REGION = os.getenv("AWS_REGION", "us-east-1")
-NOVA_SONIC_MODEL_ID = os.getenv("NOVA_SONIC_MODEL_ID", "amazon.nova-2-sonic-v1:0")
-NOVA_LITE_MODEL_ID = os.getenv("NOVA_LITE_MODEL_ID", "amazon.nova-2-lite-v1:0")
+NOVA_SONIC_MODEL_ID = os.getenv("NOVA_SONIC_MODEL_ID", "us.amazon.nova-2-sonic-v1:0")
+NOVA_LITE_MODEL_ID = os.getenv("NOVA_LITE_MODEL_ID", "us.amazon.nova-2-lite-v1:0")
 
 SUPPORTED_LANGUAGES = {
     "awajun": {
