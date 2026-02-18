@@ -73,8 +73,8 @@ with st.sidebar:
 # --- Main Content ---
 st.title("🌿 Chicham — Puente de Voces")
 st.markdown(
-    f"Asistente educativo bilingüe **Español ↔ {lang_config['name']}** "
-    f"para comunidades originarias del Perú"
+    f"Asistente educativo bilingüe **Español/Quechua ↔ {lang_config['name']}** "
+    f"para comunidades originarias del Perú — preservando lengua, cultura e identidad"
 )
 
 # --- Tabs ---
@@ -88,13 +88,19 @@ with tab_translate:
 
     col_direction = st.columns(2)
     with col_direction[0]:
+        source_lang = st.radio(
+            "Idioma del profesor",
+            options=["Español", "Quechua"],
+            horizontal=True,
+        )
+    with col_direction[1]:
         direction = st.radio(
             "Dirección",
-            options=["es_to_indigenous", "indigenous_to_es"],
+            options=["to_indigenous", "from_indigenous"],
             format_func=lambda x: (
-                f"Español → {lang_config['name']}"
-                if x == "es_to_indigenous"
-                else f"{lang_config['name']} → Español"
+                f"{source_lang} → {lang_config['name']}"
+                if x == "to_indigenous"
+                else f"{lang_config['name']} → {source_lang}"
             ),
             horizontal=True,
         )
@@ -103,8 +109,8 @@ with tab_translate:
 
     with col_input:
         source_label = (
-            "Texto en Español"
-            if direction == "es_to_indigenous"
+            f"Texto en {source_lang}"
+            if direction == "to_indigenous"
             else f"Texto en {lang_config['name']}"
         )
         input_text = st.text_area(source_label, height=150, key="translate_input")
@@ -118,16 +124,20 @@ with tab_translate:
 
         with st.spinner("Traduciendo con Amazon Nova 2 Lite..."):
             try:
-                if direction == "es_to_indigenous":
-                    result = translator.translate_to_indigenous(input_text)
+                if direction == "to_indigenous":
+                    result = translator.translate_to_indigenous(
+                        input_text, source_lang_override=source_lang
+                    )
                 else:
-                    result = translator.translate_to_spanish(input_text)
+                    result = translator.translate_to_spanish(
+                        input_text, target_lang_override=source_lang
+                    )
 
                 with col_output:
                     target_label = (
                         f"Traducción en {lang_config['name']}"
-                        if direction == "es_to_indigenous"
-                        else "Traducción en Español"
+                        if direction == "to_indigenous"
+                        else f"Traducción en {source_lang}"
                     )
                     st.text_area(
                         target_label,
@@ -259,38 +269,53 @@ with tab_about:
         ### El Problema
 
         En Perú, las comunidades indígenas como los **Awajún** (~70,000 personas)
-        enfrentan una barrera educativa crítica: los profesores asignados a sus
-        comunidades hablan español u otras lenguas indígenas, **pero no la lengua
-        de la comunidad donde enseñan**.
+        enfrentan una crisis educativa: los profesores asignados a sus comunidades
+        hablan **español, quechua u otras lenguas nativas más "mainstream"** —
+        pero **no la lengua de la comunidad donde enseñan**.
+
+        Incluso cuando el Estado envía profesores que hablan otras lenguas
+        originarias, la brecha persiste: **diferente idioma, diferente cosmovisión,
+        diferente identidad cultural**. Estos profesores, a pesar de su esfuerzo,
+        no pueden transmitir conocimiento en la lengua materna de los estudiantes,
+        ni preservar la identidad cultural Awajún — su conexión espiritual con
+        *Nugkui* (espíritu de la tierra), *Etsa* (sol), *Tsugki* (espíritu del agua),
+        sus tradiciones orales, su relación con el *ikam* (bosque).
 
         Con solo **24 intérpretes registrados** para toda la nación Awajún,
-        la comunicación en el aula se ve severamente limitada.
+        el resultado es un ciclo que se perpetúa: sin maestros Awajún, el idioma
+        se debilita; al debilitarse el idioma, menos jóvenes Awajún acceden a
+        educación superior; sin profesionales Awajún, hay aún menos maestros.
 
         ### La Solución
 
         **Chicham** (que significa "palabra/idioma" en Awajún) es un asistente
-        educativo de voz que actúa como puente lingüístico:
+        educativo de voz que actúa como **puente lingüístico y cultural**:
 
-        1. **El profesor habla en español** → Nova 2 Sonic captura y transcribe
+        1. **El profesor habla en español o quechua** → Nova 2 Sonic captura y transcribe
         2. **Nova 2 Lite traduce y adapta** → Usando una base de conocimiento
-           lingüístico y cultural Awajún
+           lingüístico y cultural Awajún, preservando la identidad
         3. **El estudiante recibe** → Texto en su lengua originaria con
-           guías de pronunciación
+           guías de pronunciación y **notas culturales** que refuerzan su identidad
         4. **Dirección inversa** → El estudiante se comunica y el profesor entiende
+        5. **Generador de lecciones** → Material bilingüe que integra la
+           cosmovisión Awajún con el contenido académico
+
+        ### Visión a Largo Plazo
+
+        Chicham no es solo una herramienta de traducción — es un catalizador:
+
+        - **Ahora**: Ayudar a los profesores actuales a comunicarse efectivamente
+        - **Mediano plazo**: Estudiantes Awajún conectados con su cultura permanecen
+          más tiempo en la escuela
+        - **Largo plazo**: Más jóvenes Awajún acceden a educación superior y regresan
+          como **maestros bilingües Awajún**, fortaleciendo la comunidad desde adentro
 
         ### Tecnología
 
-        - **Amazon Nova 2 Sonic** — Interfaz de voz en español (speech-to-speech)
-        - **Amazon Nova 2 Lite** — Traducción, razonamiento y generación de contenido
-        - **Base de conocimiento** — Diccionario, gramática y frases Awajún
+        - **Amazon Nova 2 Sonic** — Interfaz de voz en español/quechua
+        - **Amazon Nova 2 Lite** — Traducción, razonamiento cultural y generación de contenido
+        - **Base de conocimiento** — Diccionario, gramática, frases y cultura Awajún
         - **Python + Streamlit** — Aplicación web accesible
-
-        ### Impacto
-
-        - Facilita la educación intercultural bilingüe
-        - Preserva y promueve lenguas originarias en peligro
-        - Reduce la barrera de comunicación profesor-estudiante
-        - Escalable a las **48 lenguas originarias** reconocidas en Perú
 
         ---
         *Construido para el Amazon Nova AI Hackathon* **#AmazonNova**

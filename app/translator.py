@@ -25,55 +25,63 @@ class Translator:
         self.kb = KnowledgeBase(language_key)
         self.language_name = language_name
 
-    def translate_to_indigenous(self, spanish_text: str) -> dict:
-        """Translate Spanish text to the indigenous language.
+    def translate_to_indigenous(
+        self, text: str, source_lang_override: str = None
+    ) -> dict:
+        """Translate Spanish or Quechua text to the indigenous language.
 
         Args:
-            spanish_text: Text in Spanish to translate.
+            text: Text in the source language to translate.
+            source_lang_override: Override source language (e.g., "Quechua").
 
         Returns:
             Dict with translation, context used, and confidence notes.
         """
+        source = source_lang_override or SOURCE_LANGUAGE_NAME
         dictionary_context = self.kb.get_all_vocabulary_context()
         grammar_context = self.kb.get_grammar_context()
-        matching_phrases = self.kb.get_matching_phrases(spanish_text)
+        matching_phrases = self.kb.get_matching_phrases(text)
 
         full_dict_context = dictionary_context
         if matching_phrases and "No se encontraron" not in matching_phrases:
             full_dict_context += f"\n\nFRASES SIMILARES CONOCIDAS:\n{matching_phrases}"
 
         translation = self.nova.translate(
-            text=spanish_text,
-            source_lang=SOURCE_LANGUAGE_NAME,
+            text=text,
+            source_lang=source,
             target_lang=self.language_name,
             dictionary_context=full_dict_context,
             grammar_context=grammar_context,
         )
 
         return {
-            "original": spanish_text,
+            "original": text,
             "translation": translation,
-            "source_lang": SOURCE_LANGUAGE_NAME,
+            "source_lang": source,
             "target_lang": self.language_name,
-            "dictionary_matches": self.kb.search_dictionary(spanish_text),
+            "dictionary_matches": self.kb.search_dictionary(text),
         }
 
-    def translate_to_spanish(self, indigenous_text: str) -> dict:
-        """Translate indigenous language text to Spanish.
+    def translate_to_spanish(
+        self, indigenous_text: str, target_lang_override: str = None
+    ) -> dict:
+        """Translate indigenous language text to Spanish or Quechua.
 
         Args:
             indigenous_text: Text in the indigenous language.
+            target_lang_override: Override target language (e.g., "Quechua").
 
         Returns:
             Dict with translation and context.
         """
+        target = target_lang_override or SOURCE_LANGUAGE_NAME
         dictionary_context = self.kb.get_all_vocabulary_context()
         grammar_context = self.kb.get_grammar_context()
 
         translation = self.nova.translate(
             text=indigenous_text,
             source_lang=self.language_name,
-            target_lang=SOURCE_LANGUAGE_NAME,
+            target_lang=target,
             dictionary_context=dictionary_context,
             grammar_context=grammar_context,
         )
@@ -82,7 +90,7 @@ class Translator:
             "original": indigenous_text,
             "translation": translation,
             "source_lang": self.language_name,
-            "target_lang": SOURCE_LANGUAGE_NAME,
+            "target_lang": target,
         }
 
     def generate_lesson(self, topic: str, difficulty: str = "básico") -> str:

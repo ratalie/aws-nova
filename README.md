@@ -4,39 +4,59 @@
 
 ## The Problem
 
-Peru has **48 officially recognized indigenous languages**. However, in Amazonian indigenous communities like the **Awajún** (~70,000 people in Amazonas, San Martín, Cajamarca, Loreto, and Ucayali), assigned teachers speak Spanish or other indigenous languages — **but not the language of the community where they teach**.
+Peru has **48 officially recognized indigenous languages**. However, in Amazonian indigenous communities like the **Awajún** (~70,000 people in Amazonas, San Martín, Cajamarca, Loreto, and Ucayali), the teachers assigned to their schools come from outside — speaking **Spanish, Quechua, or other more mainstream indigenous languages**, but **not Awajún**.
 
-With only **24 registered interpreters** for the entire Awajún nation, classroom communication is severely limited. Children don't learn in their native language, and teachers cannot effectively transmit knowledge.
+Because there aren't enough Awajún-speaking teachers, the state sends teachers who speak other native languages, assuming linguistic proximity is "close enough." But even when a Quechua-speaking teacher is sent to an Awajún community, the gap remains: **different language, different cosmovision, different cultural identity**. These teachers, despite their best efforts, cannot transmit knowledge in the students' mother tongue, nor can they preserve and reinforce the Awajún cultural identity — their spiritual connection to *Nugkui* (earth spirit), *Etsa* (sun), *Tsugki* (water spirit), their oral traditions, their relationship with the *ikam* (forest).
 
-**This is not just a linguistic problem — it's an educational crisis affecting thousands of children.**
+With only **24 registered interpreters** for the entire Awajún nation, the result is:
+- Children lose connection with their language and culture
+- Teachers struggle to communicate effectively in the classroom
+- Awajún cultural identity erodes with each generation
+- Fewer young Awajún pursue higher education to become teachers themselves
+
+**This is not just a linguistic problem — it's a cultural survival crisis. And it perpetuates a cycle: without Awajún teachers, the language fades; as the language fades, fewer Awajún access higher education; without educated Awajún, there are even fewer teachers.**
 
 ## The Solution
 
-**Chicham** is a voice-powered educational assistant built with Amazon Nova that acts as a **linguistic and cultural bridge** between Spanish-speaking teachers and students from indigenous communities.
+**Chicham** is a voice-powered educational assistant built with Amazon Nova that acts as a **linguistic and cultural bridge** between teachers (who may speak Spanish, Quechua, or other languages) and Awajún students — preserving not just the language, but the cultural identity of the community.
 
 ### How It Works
 
 ```
-Teacher (Voice in Spanish) → Nova 2 Sonic → Spanish Text
-                                                    ↓
-                                          Nova 2 Lite + Knowledge Base
-                                          (Translation + Cultural Context)
-                                                    ↓
-                                 Awajún Text + Pronunciation Guide → Student
+Teacher (Voice in Spanish/Quechua) → Nova 2 Sonic → Transcribed Text
+                                                          ↓
+                                               Nova 2 Lite + Knowledge Base
+                                               (Translation + Cultural Context
+                                                + Identity Preservation)
+                                                          ↓
+                                    Awajún Text + Cultural Notes + Pronunciation → Student
+                                                          ↓
+                                              Student responds in Awajún
+                                                          ↓
+                                               Nova 2 Lite → Teacher understands
 ```
 
-1. **Teacher speaks in Spanish** → Amazon Nova 2 Sonic captures and transcribes audio in real-time
-2. **Nova 2 Lite translates and adapts** → Using a linguistic knowledge base (dictionary, grammar, phrases) specific to Awajún
-3. **Student receives** → Text in their native language with pronunciation guides
-4. **Reverse direction** → Student communicates and teacher understands
-5. **Lesson generator** → Creates culturally appropriate bilingual educational material
+1. **Teacher speaks in Spanish or Quechua** → Amazon Nova 2 Sonic captures and transcribes audio in real-time
+2. **Nova 2 Lite translates and adapts** → Using a linguistic knowledge base (dictionary, grammar, phrases) specific to Awajún, enriched with cultural context
+3. **Student receives** → Text in Awajún with pronunciation guides **and cultural notes** that reinforce their identity
+4. **Reverse direction** → Student communicates in Awajún and the teacher understands
+5. **Lesson generator** → Creates bilingual educational material that integrates Awajún cosmovision (Nugkui, Etsa, Tsugki) alongside academic content
+6. **Cultural preservation** → Every interaction reinforces Awajún identity, oral traditions, and connection to territory
+
+### Long-Term Vision
+
+Chicham is not just a translation tool — it's a catalyst for breaking the cycle:
+
+1. **Now**: Help current teachers (Spanish/Quechua-speaking) communicate effectively with Awajún students while preserving cultural identity
+2. **Medium-term**: Awajún students who feel connected to their culture and language stay in school longer and achieve better outcomes
+3. **Long-term**: More Awajún youth access higher education and return as **bilingual Awajún teachers**, reducing dependency on external teachers and strengthening the community from within
 
 ## Features
 
 | Feature | Description | Nova Model |
 |---|---|---|
-| 💬 **Bidirectional Translator** | Spanish ↔ Awajún with cultural context | Nova 2 Lite |
-| 🎤 **Voice Interface** | Teacher speaks naturally in Spanish | Nova 2 Sonic |
+| 💬 **Bidirectional Translator** | Spanish/Quechua ↔ Awajún with cultural context | Nova 2 Lite |
+| 🎤 **Voice Interface** | Teacher speaks naturally in Spanish or Quechua | Nova 2 Sonic |
 | 📚 **Lesson Generator** | Bilingual educational material by level | Nova 2 Lite |
 | 🗣️ **Phrase Book** | Classroom phrases with pronunciation guide | Knowledge Base |
 | 📖 **Integrated Dictionary** | Categorized vocabulary with cultural context | Knowledge Base |
@@ -55,7 +75,7 @@ Teacher (Voice in Spanish) → Nova 2 Sonic → Spanish Text
 │            (Orchestrates KB + Nova 2 Lite)              │
 ├──────────────────┬──────────────────────────────────────┤
 │  Nova 2 Sonic    │         Nova 2 Lite                   │
-│  (Spanish Voice) │  (Translation + Reasoning)           │
+│  (ES/QU Voice)   │  (Translation + Cultural Reasoning)  │
 │  amazon.nova-    │  amazon.nova-2-lite-v1:0             │
 │  2-sonic-v1:0    │                                       │
 ├──────────────────┴──────────────────────────────────────┤
@@ -185,10 +205,11 @@ The project is based on official materials from Peru's Ministry of Education for
 
 ## Potential Impact
 
-- **Education**: Facilitates Bilingual Intercultural Education (EIB) in communities lacking sufficient bilingual teachers
-- **Language Preservation**: Documents and promotes endangered indigenous languages
-- **Scalability**: System is extensible to all 48 indigenous languages of Peru
-- **Accessibility**: Web interface accessible from any device with internet
+- **Immediate**: Helps Spanish- and Quechua-speaking teachers communicate effectively with Awajún students in the classroom
+- **Cultural Preservation**: Reinforces Awajún identity, cosmovision, and oral traditions through every interaction — not just translating words, but preserving meaning
+- **Breaking the Cycle**: By keeping Awajún children engaged in education through their own language and culture, more will access higher education and return as Awajún-speaking teachers
+- **Scalability**: System is extensible to all 48 indigenous languages of Peru, each with their own cultural knowledge base
+- **Accessibility**: Web interface accessible from any device with internet, designed for rural communities
 
 ## Hackathon Category
 
