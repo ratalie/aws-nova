@@ -5,7 +5,17 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-AWS_REGION = os.getenv("AWS_REGION", "us-east-1")
+# Support Streamlit Community Cloud secrets
+try:
+    import streamlit as st
+    if hasattr(st, "secrets"):
+        for key in ("AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY", "AWS_DEFAULT_REGION"):
+            if key in st.secrets:
+                os.environ[key] = st.secrets[key]
+except Exception:
+    pass
+
+AWS_REGION = os.getenv("AWS_DEFAULT_REGION", os.getenv("AWS_REGION", "us-east-1"))
 NOVA_SONIC_MODEL_ID = os.getenv("NOVA_SONIC_MODEL_ID", "us.amazon.nova-2-sonic-v1:0")
 NOVA_LITE_MODEL_ID = os.getenv("NOVA_LITE_MODEL_ID", "us.amazon.nova-2-lite-v1:0")
 

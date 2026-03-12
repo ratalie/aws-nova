@@ -1,0 +1,15 @@
+version: 1.0
+runtime: python311
+build:
+  commands:
+    build:
+      - pip install -r requirements.txt
+run:
+  command: streamlit run app/main.py --server.port=8080 --server.address=0.0.0.0 --server.headless=true
+  network:
+    port: 8080
+  env:
+    - name: PYTHONPATH
+      value: /app/source
+    - name: AWS_DEFAULT_REGION
+      value: us-east-1

@@ -7,6 +7,11 @@ Spanish-Indigenous language barrier.
 Run with: streamlit run app/main.py
 """
 
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 import io
 import streamlit as st
 from audio_recorder_streamlit import audio_recorder
