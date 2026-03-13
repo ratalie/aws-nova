@@ -14,7 +14,6 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import io
 import streamlit as st
-from audio_recorder_streamlit import audio_recorder
 from app.translator import Translator
 from app.knowledge_base import KnowledgeBase
 from app.nova_sonic import NovaSonicClient
@@ -366,31 +365,24 @@ with tab_translate:
     # --- Voice Input ---
     st.markdown("---")
     st.markdown("#### 🎤 Entrada por voz")
-    st.caption("Presiona el boton para grabar, habla, y presiona de nuevo para parar")
+    st.caption("Graba un audio y se transcribirá automáticamente al campo de texto")
 
-    voice_col1, voice_col2 = st.columns([1, 4])
-    with voice_col1:
-        audio_bytes = audio_recorder(
-            text="",
-            recording_color="#e74c3c",
-            neutral_color="#2ecc71",
-            icon_size="3x",
-            pause_threshold=2.0,
-            sample_rate=16000,
-        )
-    with voice_col2:
-        if audio_bytes:
-            st.audio(audio_bytes, format="audio/wav")
+    audio_file = st.audio_input("Presiona para grabar")
 
-    voice_text = ""
-    if audio_bytes:
-        with st.spinner("🎤 Transcribiendo con Amazon Transcribe..."):
-            try:
-                sonic = NovaSonicClient()
-                voice_text = sonic.transcribe_audio(audio_bytes)
-                st.success(f"**Transcripcion:** {voice_text}")
-            except Exception as e:
-                st.warning(f"Transcripcion no disponible: {e}. Usa el campo de texto.")
+    if audio_file is not None:
+        audio_id = audio_file.file_id
+        if st.session_state.get("last_audio_id") != audio_id:
+            with st.spinner("🎤 Transcribiendo..."):
+                try:
+                    sonic = NovaSonicClient()
+                    audio_bytes = audio_file.read()
+                    result = sonic.transcribe_audio(audio_bytes)
+                    if result:
+                        st.session_state.last_audio_id = audio_id
+                        st.session_state.translate_input = result
+                        st.rerun()
+                except Exception as e:
+                    st.warning(f"Transcripción no disponible: {e}. Usa el campo de texto.")
 
     st.markdown("---")
 
@@ -404,9 +396,8 @@ with tab_translate:
             if direction == "to_indigenous"
             else f"Texto en {lang_config['name']}"
         )
-        default_text = voice_text if voice_text else ""
         input_text = st.text_area(
-            source_label, value=default_text, height=150, key="translate_input"
+            source_label, height=150, key="translate_input"
         )
 
     translate_btn = st.button(
